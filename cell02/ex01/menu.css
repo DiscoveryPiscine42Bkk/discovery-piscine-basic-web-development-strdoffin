@@ -1,0 +1,12 @@
+select{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(91, 182, 235);
+    color: aliceblue;
+    border-width:0px;
+    box-shadow: 10px 10px;
+}
+option{
+    background: white;
+    color: black;
+}

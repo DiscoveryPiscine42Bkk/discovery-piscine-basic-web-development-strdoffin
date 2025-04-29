@@ -1,0 +1,15 @@
+.container{
+    width: 100%;
+    height:100px;
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.container > div {
+    border-style: solid;padding: 10px;border-color: black; height: 100%; align-items: center;display: flex;
+}
+.First{
+    background-color: blue;
+}
+.Second{
+    background-color: red;
+}
