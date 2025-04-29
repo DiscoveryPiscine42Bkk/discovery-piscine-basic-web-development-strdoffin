@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="numA">
+    <select name="aa" id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="numB">
+    <button type="submit" id="btn">Try me!</button>
+    <script>
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click',(e)=>{
+
+            e.preventDefault()
+            function operator(a,b){
+                o = document.getElementById('op').value
+                switch(o){
+                    case "+":
+                        alert(a+b)
+                        console.log(a+b)
+                        return
+                    case "-":
+                        alert(a-b)
+                        console.log(a-b)
+                        return
+                    case "*":
+                        alert(a*b)
+                        console.log(a*b)
+                        return
+                    case "/":
+                        if(b==0){
+                            alert('It’s over 9000!')
+                            console.log('It’s over 9000!')
+                            return
+                         }else{
+                            alert(a%b)
+                            console.log(a%b)
+                            return
+                        }
+                    case "%":
+                        if(b==0){
+                            alert('It’s over 9000!')
+                            console.log('It’s over 9000!')
+                            return
+                        }else{
+                            alert(a%b)
+                            console.log(a%b)
+                            return
+                        }
+
+                }
+            }
+            let valueA = document.getElementById('numA').value
+            let valueB = document.getElementById('numB').value
+            try{
+                valueA = parseInt(valueA)
+                valueB = parseInt(valueB)
+                console.log('convertpass')
+                if(Math.sign(valueA) == 1 || Math.sign(valueB) == 1 || Math.sign(valueA) == 0 || Math.sign(valueB) == 0){
+                    operator(valueA,valueB)
+                }else{
+                    alert('Error :(')
+                    return
+                }
+            }catch{
+                alert('Error :(')
+            }
+        })
+        setInterval(() => {
+            alert('Please, use me ...')
+        }, 30 *1000);
+    </script>
+</body>
+</html>
