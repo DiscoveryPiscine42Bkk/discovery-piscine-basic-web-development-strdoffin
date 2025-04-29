@@ -5,10 +5,17 @@
     <link rel="stylesheet" href="background.css">
 </head>
 <body>
-    <button type="button" onclick="handleclick()">Click me!</button>
+    <button type="button" onclick="handleclick()" id="btn">Click me!</button>
     <script>
         const handleclick = () =>{
             var randomColor = Math.floor(Math.random()*16777215)
+            let btn = document.getElementById('btn')
+            w = window.getComputedStyle(btn).width
+            t = window.getComputedStyle(btn).fontSize
+            w = w.replace('px','')
+            t = t.replace('px','')
+            document.getElementById('btn').style.width = (parseInt(w)+10)+'px' 
+            document.getElementById('btn').style.fontSize = (parseInt(t)+3)+'px' 
             document.body.style.backgroundColor = `#${randomColor.toString(16)}`;
             console.log(randomColor)
             console.log(randomColor.toString(16))

@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href="balloon.css">
     <style>
         .balloon{
             width: 200px;
@@ -37,8 +36,9 @@
             }
             checkColor(cnt)
             var w = window.getComputedStyle(balloon).width
+            console.log(w)
             w = parseInt(w.replace('px',''))
-            if(w > 450){
+            if(w > 420){
                 balloon.style.width = "200px";
                 return
             }
