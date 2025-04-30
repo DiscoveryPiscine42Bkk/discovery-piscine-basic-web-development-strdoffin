@@ -1,10 +1,16 @@
 function popUpInput(){
     console.log('test')
     let todo = prompt('Enter your todo')
+    let list = getCookie()
     if(todo != null || todo != " "){
-        let len = getCookieLen()
-        setCookie(len,todo,2)
-        // setCookie(len,todo,2)
+        if(list[0] == ""){
+            setCookie(0,todo,2)
+        }else{
+            let data = list.at(-1)
+            data = data.split('=')
+            data = data[0]
+            setCookie(data,todo,2)
+        }
     }
 }
 function setCookie(name,value,exday){
@@ -15,24 +21,36 @@ function setCookie(name,value,exday){
 }
 
 function getCookieLen(){
-    // let index = name+"="
     let decodedCookie = decodeURIComponent(document.cookie)
     decodedCookie = decodedCookie.split('; ')
-    console.log(decodedCookie.length)
     return decodedCookie.length
 }
 
 function getCookie(){
-    // let index = name+"="
     let decodedCookie = decodeURIComponent(document.cookie)
     decodedCookie = decodedCookie.split('; ')
     console.log(decodedCookie)
+    return decodedCookie
 }
 
 function loadList(){
-    
+    let data = getCookie()
+    for(let i=0;i<getCookieLen();i++){
+        const node = document.createElement("div");
+        const textnode = document.createTextNode(`${data[i]}`);
+        node.appendChild(textnode);
+        document.getElementById('ft_list').appendChild(node)
+        let text = data[i].split('=')
+        node.addEventListener('click',()=>{
+            removeCookie(text[0])
+        })
+    }
 }
 
-// document.cookie = "undefined=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 getCookie()
-
+loadList()
+function removeCookie(x){
+    if(confirm('Are you sure to Delete')){
+        document.cookie = `${x}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+    }
+}
