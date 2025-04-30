@@ -9,14 +9,37 @@ body,html{
     background-image: url("https://img.freepik.com/free-vector/realistic-vhs-effect-background_23-2150105917.jpg?t=st=1745894323~exp=1745897923~hmac=5093aa5b7d3b1e44029019730e52ac0487a3541d42c78e640eb4a83106fdf045&w=1380");
     height: 100%;
     background-attachment: fixed;
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parallax2 {
+    background-image: url('https://www.todayifoundout.com/wp-content/uploads/2017/11/rick-astley.png');
+    height: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container{
-    padding-top: 1000px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     color:red
+}
+.container-black{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color:black;
+    color:white;
+}
+h2{
+    position: relative;   
+    color: wheat;
+    font-size: 100px;
 }
