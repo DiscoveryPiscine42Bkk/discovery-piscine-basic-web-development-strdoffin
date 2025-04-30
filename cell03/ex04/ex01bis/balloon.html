@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .balloon{
+            width: 200px;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon" id="balloon"></div>
+    <script>
+        const balloonColor = ["red","green","blue"]
+        var cnt = 0
+        $('#balloon').click(()=>{
+            increaseBalloon()
+        })
+        $('#balloon').mouseleave(()=>{
+            shrinkBalloon()
+        })
+        function checkColor(x){
+            $('#balloon').css('background-color',balloonColor[x])
+        }
+        function increaseBalloon(){
+            cnt++
+            if(cnt > 2){
+                cnt = 0
+            }
+            checkColor(cnt)
+            var w = parseInt($('#balloon').css('width'))
+            if(w > 420){
+                $('#balloon').css('width',"200px") 
+                return
+            }
+            $('#balloon').css('width',(w+10)+"px") 
+        }
+        function shrinkBalloon(){
+            cnt--
+            if(cnt < 0){
+                cnt = 2
+            }
+            checkColor(cnt)
+            var w = parseInt($('#balloon').css('width'))
+            if(w <= 200){
+                return
+            }
+            $('#balloon').css('width',(w-5)+"px")
+        }
+    </script>
+</body>
+</html>

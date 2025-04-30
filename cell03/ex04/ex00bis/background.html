@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="background.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <button type="button" id="btn">Click me!</button>
+    <script>
+        $(document).ready(function(){
+            $("button").click(()=>{
+                var randomColor = Math.floor(Math.random()*16777215).toString(16)
+                $('body').css('background-color',`#${randomColor}`)
+                var w = parseInt($('button').css('width'))
+                var t = parseInt($('button').css('font-size'))
+                $('button').css('width',(w+10)+"px")
+                $('button').css('font-size',(t+2)+"px")
+            })
+        });
+
+
+
+
+
+        // This old js
+        // const handleclick = () =>{
+        //     let btn = document.getElementById('btn')
+        //     w = window.getComputedStyle(btn).width
+        //     t = window.getComputedStyle(btn).fontSize
+        //     w = w.replace('px','')
+        //     t = t.replace('px','')
+        //     document.getElementById('btn').style.width = (parseInt(w)+10)+'px' 
+        //     document.getElementById('btn').style.fontSize = (parseInt(t)+3)+'px' 
+        //     document.body.style.backgroundColor = `#${randomColor.toString(16)}`;
+        //     console.log(randomColor)
+        //     console.log(randomColor.toString(16))
+        // }
+    </script>
+</body>
+</html>

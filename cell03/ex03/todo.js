@@ -44,7 +44,7 @@ function loadList(){
             node.appendChild(textnode);
             document.getElementById('ft_list').appendChild(node)
             let text = data[i].split('=')
-            node.addEventListener('click',()    =>{
+            node.addEventListener('click',()=>{
                 removeCookie(text[0])
             })
         }

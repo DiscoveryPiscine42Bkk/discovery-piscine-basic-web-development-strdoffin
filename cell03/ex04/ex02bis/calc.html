@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="numA">
+    <select name="aa" id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="numB">
+    <button type="submit" id="btn">Try me!</button>
+    <script>
+        function operator(a,b){
+                o = $('#op').find(':selected').val()
+                switch(o){
+                    case "+":
+                        alert(a+b)
+                        console.log(a+b)
+                        return
+                    case "-":
+                        alert(a-b)
+                        console.log(a-b)
+                        return
+                    case "*":
+                        alert(a*b)
+                        console.log(a*b)
+                        return
+                    case "/":
+                        if(b==0){
+                            alert('It’s over 9000!')
+                            console.log('It’s over 9000!')
+                            return
+                         }else{
+                            alert(a%b)
+                            console.log(a%b)
+                            return
+                        }
+                    case "%":
+                        if(b==0){
+                            alert('It’s over 9000!')
+                            console.log('It’s over 9000!')
+                            return
+                        }else{
+                            alert(a%b)
+                            console.log(a%b)
+                            return
+                        }
+
+                }
+            }
+        $('#btn').click((e)=>{
+            e.preventDefault()
+            let valueA = $('#numA').val()
+            let valueB = $('#numB').val()
+            try{
+                valueA = parseInt(valueA)
+                valueB = parseInt(valueB)
+                console.log('convertpass',typeof(Math.sign(valueA)),Math.sign(valueB))
+                if(Math.sign(valueA) == -1 || Math.sign(valueB) == -1){
+                    alert('Error :(')
+                    return
+                }else{
+                    operator(valueA,valueB)
+                }
+            }catch{
+                alert('Error :(')
+            }
+        })
+        setInterval(() => {
+            alert('Please, use me ...')
+        }, 30 *1000);
+    </script>
+</body>
+</html>
