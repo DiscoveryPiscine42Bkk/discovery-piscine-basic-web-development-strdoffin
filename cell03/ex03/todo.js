@@ -3,11 +3,7 @@ function popUpInput(){
     let todo = prompt('Enter your todo')
     if(todo != null || todo != " "){
         let len = getCookieLen()
-        if(len == 1){
-            setCookie(len-1,todo,2)
-        }else{
-            
-        }
+        setCookie(len,todo,2)
         // setCookie(len,todo,2)
     }
 }
@@ -33,6 +29,9 @@ function getCookie(){
     console.log(decodedCookie)
 }
 
+function loadList(){
+    
+}
 
 // document.cookie = "undefined=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 getCookie()
