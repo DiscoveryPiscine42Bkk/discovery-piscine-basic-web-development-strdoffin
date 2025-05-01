@@ -1,5 +1,7 @@
 *{
     scroll-behavior: smooth;
+    font-family: Arial, Helvetica , monospace;
+
 }
 
 @keyframes fadeInUp {
@@ -29,3 +31,5 @@
 #fadeInDown-animation {
     animation: 1  s fadeInDown;
 }
+
+
