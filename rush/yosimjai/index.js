@@ -71,3 +71,10 @@ function nextCard() {
 function sent() {
     alert('Sent Email Success!')
 }
+
+const contactBtn = document.getElementById('contactBtn')
+
+contactBtn.addEventListener('click',(e)=>{
+    e.preventDefault
+    sent()
+})
