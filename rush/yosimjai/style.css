@@ -32,4 +32,7 @@
     animation: 1  s fadeInDown;
 }
 
-
+input::placeholder {
+  color: white;
+  opacity: 0.5;
+}

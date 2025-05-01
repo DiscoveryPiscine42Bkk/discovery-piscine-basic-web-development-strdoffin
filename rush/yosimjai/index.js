@@ -16,3 +16,11 @@ window.addEventListener('scroll' , ()=>{
         }
     })
 })
+
+
+
+
+
+function sent(){
+    alert('Sent Email Success!')
+}
