@@ -36,3 +36,10 @@ input::placeholder {
   color: white;
   opacity: 0.5;
 }
+
+input{
+  color:white
+}
+textarea{
+  color:white
+}
