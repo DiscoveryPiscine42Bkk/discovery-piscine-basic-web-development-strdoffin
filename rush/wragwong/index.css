@@ -1,0 +1,23 @@
+*{
+    scroll-behavior: smooth ;
+}
+
+@keyframes orbit-slow {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.orbit-slow{
+    animation: orbit-slow 10s linear infinite;
+}
+
+@keyframes counter-rotate{
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+.counter-rotate{
+    animation: counter-rotate 10s linear infinite;
+}

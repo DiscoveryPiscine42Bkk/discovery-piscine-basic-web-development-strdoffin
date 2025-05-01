@@ -1,0 +1,27 @@
+@keyframes orbit {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.orbit1{
+    animation: orbit 5s linear infinite;
+}
+
+@keyframes counter-rotate{
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+.counter-rotate1{
+    animation: counter-rotate 5s linear infinite;
+}
+
+.orbit2{
+    animation: orbit 15s linear infinite;
+}
+
+.counter-rotate2{
+    animation: counter-rotate 15s linear infinite;
+}
